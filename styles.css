@@ -73,13 +73,13 @@ p {
   border: 1px solid #4a5567;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 375px) and (max-width: 625px) {
   .container {
-    max-width: 350px;
+    max-width: 300px;
     min-height: 250px;
   }
-
   .category {
     padding: 5px;
+    margin: 5px;
   }
 }
