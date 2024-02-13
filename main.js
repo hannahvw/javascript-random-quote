@@ -5,11 +5,18 @@ const author = document.querySelector(".author");
 
 const apiUrl = "https://api.quotable.io/random";
 
-fetch(apiUrl)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(`${data.content} —${data.author}`);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+
+function updateQuote() {
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(`${data.content} —${data.author}`);
+      author.innerText = `${data.author}`;
+      quote.innerText = `"${data.content}"`;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+randomQuoteBtn.addEventListener("click", updateQuote);
