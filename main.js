@@ -5,7 +5,6 @@ const author = document.querySelector(".author");
 
 const apiUrl = "https://api.quotable.io/random";
 
-
 function updateQuote() {
   fetch(apiUrl)
     .then((response) => response.json())
